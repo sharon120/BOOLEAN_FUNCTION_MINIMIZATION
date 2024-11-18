@@ -29,36 +29,38 @@ Hardware – PCs, Cyclone II , USB flasher
 
 **Program:**
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
-
+Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+```
 Developed by:Sharon Harshini L M
 
-RegisterNumber:212223040193*/
+RegisterNumber:212223040193
 ```
-module booleanexp2(a,b,c,d,w,x,y,z,f1,f2);
-input a,b,c,d,w,x,y,z;
-output f1,f2;
-wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
-not(adash,a);
-not(bdash,b);
-not(cdash,c);
-not(ddash,d);
-and(p,bdash,ddash);
-and(q,adash,b,d);
-and(r,a,b,cdash);
-or(f1,p,q,r);
-not(ydash,y);
-and(s,ydash,z);
-and(t,x,y);
-and(u,w,y);
-or(f2,s,t,u);
+
+```
+module expno2(A,B,C,D,F1);
+input A,B,C,D;
+output F1;
+wire x1,x2,x3,x4,x5;
+assign x1=(~A)&(~B)&(~C)&(~D);
+assign x2=(~A)&(~C)&(~D);
+assign x3=(~B)&(~C)&(~D);
+assign x4=(~A)&(~B)&(~C)&(~D);
+assign x5=(~B)&(~C)&(~D);
+assign F1=x1|x2|x3|x4|x5;
 endmodule
 ```
-**Output:**
-![image](https://github.com/user-attachments/assets/65b29922-082a-44ca-a78b-52baf08b4133)
 
-**RTL**
-![image](https://github.com/user-attachments/assets/48c10f65-15cf-49c0-8b1d-6c955ac17acb)
+**RTL Realization**
+
+![image](https://github.com/user-attachments/assets/5abc9bac-0f0a-4d36-90c4-d1c612765140)
+
+
+**Truthtable**
+![image](https://github.com/user-attachments/assets/fb1ccf54-a22c-4f39-9f3b-fd7ce642c987)
+
+**Timing Diagram**
+![image](https://github.com/user-attachments/assets/e3d35e69-d89c-423c-a28b-337617f8f5ad)
+
 
 **Result:**
 
